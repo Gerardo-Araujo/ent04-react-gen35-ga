@@ -46,6 +46,8 @@ const FormUser = ({
     setUserEdit();
   };
 
+  const birthday = new Date(register.birthday).toLocaleDateString('es-ES');
+
   return (
     <div className={`form__container ${formIsClose && "form__close"}`}>
       <form className="form" onSubmit={handleSubmit(Submit)}>

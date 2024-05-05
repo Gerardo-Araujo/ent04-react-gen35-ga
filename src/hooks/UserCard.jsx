@@ -9,7 +9,10 @@ const UserCard = ({ user, deleteUser, setUserEdit, handleOpenForm }) => {
   const handleEdit = () => {
     setUserEdit(user);
     handleOpenForm();
+
   };
+
+   const birthday = new Date(user.birthday).toLocaleDateString('es-ES')
   return (
     <div className="container">
     <article className="card__container">
@@ -17,12 +20,12 @@ const UserCard = ({ user, deleteUser, setUserEdit, handleOpenForm }) => {
         <h2 className="card__title">{`${user.first_name} ${user.last_name}`}</h2>
         <ul className="card__list">
           <li className="card__list__item">
-            <span>Email</span>
+            <span>Email: </span>
             <span>{user.email}</span>
           </li>
           <li className="card__list__item">
-            <span>Birthday</span>
-            <span>{user.birthday}</span>
+            <span>Birthday: </span>
+            <span>{birthday}</span>
           </li>
         </ul>
         <button className="card__btn" onClick={handleDelete}>
