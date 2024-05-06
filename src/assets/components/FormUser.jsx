@@ -45,7 +45,6 @@ const FormUser = ({
     });
     setUserEdit();
   };
-
   const birthday = new Date(register.birthday).toLocaleDateString('es-ES');
 
   return (
@@ -106,3 +105,4 @@ const FormUser = ({
 };
 
 export default FormUser;
+

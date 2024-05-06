@@ -28,6 +28,7 @@ const UserCard = ({ user, deleteUser, setUserEdit, handleOpenForm }) => {
             <span>{birthday}</span>
           </li>
         </ul>
+        
         <button className="card__btn" onClick={handleDelete}>
           Delete
         </button>

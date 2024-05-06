@@ -38,7 +38,6 @@ const useCrud = (BASEURL) => {
   .catch(err => console.log(err))
 }
 
-
     // UPDATE
   const updateApi = (path, id, data) => {
     const url = `${BASEURL}${path}${id}/`
