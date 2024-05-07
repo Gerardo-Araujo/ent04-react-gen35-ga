@@ -12,7 +12,7 @@ const UserCard = ({ user, deleteUser, setUserEdit, handleOpenForm }) => {
 
   };
 
-   const birthday = new Date(user.birthday).toLocaleDateString('es-ES')
+   //const birthday = new Date(user.birthday).toLocaleDateString('es-ES')
   return (
     <div className="container">
     <article className="card__container">
@@ -25,7 +25,7 @@ const UserCard = ({ user, deleteUser, setUserEdit, handleOpenForm }) => {
           </li>
           <li className="card__list__item">
             <span>Birthday: </span>
-            <span>{birthday}</span>
+            <span>{user.birthday}</span>
           </li>
         </ul>
         

@@ -11,15 +11,26 @@ const FormUser = ({
   formIsClose,
 }) => {
   const { handleSubmit, register, reset } = useForm();
-
-  useEffect(() => {
-    reset(userEdit);
-  }, [userEdit]);
+  
+  //useEffect(() => {
+    //  if (userEdit) {
+      //    const date = new Date(userEdit.birthday);
+      //    userEdit.birthday = `${date.getFullYear()}-${date.getUTCMonth()}-${date.getDate()}`
+      //    reset(userEdit);
+      // }
+      //}, [userEdit]);
+      
+      useEffect(() => {
+        reset(userEdit);
+      }, [userEdit]);
 
   const Submit = (data) => {
+    console.log(data);
+   
     if (userEdit) {
       // UPDATE
       updateUser("/users/", userEdit.id, data);
+      console.log(data)
       setUserEdit();
     } else {
       createUser("/users/", data);
@@ -45,8 +56,9 @@ const FormUser = ({
     });
     setUserEdit();
   };
-  const birthday = new Date(register.birthday).toLocaleDateString('es-ES');
 
+  // const birthday = new Date(register.birthday).toLocaleDateString('es-ES');
+  
   return (
     <div className={`form__container ${formIsClose && "form__close"}`}>
       <form className="form" onSubmit={handleSubmit(Submit)}>

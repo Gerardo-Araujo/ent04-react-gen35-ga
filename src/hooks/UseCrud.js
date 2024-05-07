@@ -12,6 +12,7 @@ const useCrud = (BASEURL) => {
     axios.get(url)
       .then(res => setResponse(res.data))
       .catch(err => console.log(err))
+    
   }
 
 
